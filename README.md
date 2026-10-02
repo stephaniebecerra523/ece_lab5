@@ -1,9 +1,8 @@
-# Lab 04 - SOP/POS and KMaps
+# Lab 05 - Combinatorial Logic
 
-Gabi Zachos, Stephanie Becerra, Group 14
-In this lab, you’ve learned how to apply KMaps, Sum Of Products and Products of
-sums to simplify digital logic equations. Then, you’ve proven out that they work
-using an implemented design on your Basys3 boards.
+In this lab, you’ve learned real world applications of digital logic, as well
+as how to assemble your own Verilog modules. In addition, you’ve learned how
+the constraints file maps your inputs and outputs to real pins on the FPGA.
 
 ## Rubric
 
@@ -14,23 +13,23 @@ using an implemented design on your Basys3 boards.
 | Question 2 | Your answers to the question | 25% |
 | Question 3 | Your answers to the question | 25% |
 
+## Name
+Gabi Zachos, Stephanie Becerra 
+
 ## Lab Summary
 
-Summarize your learnings from the lab here.
-
-We took the inputs from the truth table and created a KMap as well as turning those inputs into sum of product and product of sum equations. We implemented them into minterm, maxterm and naive files. 
+Along with learning how the constraints file maps our inputs and outputs as well as learning how to combine two circuits in a Verilog module, we formed simplified boolean equations for the provided truth tables by creating two K-Maps. 
 
 ## Lab Questions
 
-### Why are the groups of 1’s (or 0’s) that we select in the KMap able to go across edges?
+### 1 - Explain the role of the Top Level file. 
 
-Groups of 1s and 0s are able to go across edges in a KMap because the map is not actually a flat grid. 
+The top level file combined circuits A and B by creating instances of each of these circuits inside a module. This file also includes declarations of the inputs, outputs and all of the sw[] and led[] pins that were needed. 
 
-### Why are the names Sum of Products and Products of Sums?
+### 2 - Explain the function of the Constraints file.
 
-It's called Sum of Products because we're adding all of the ANDS together to form an equation. It's called products of sums because we're using the OR symbols to combine all of the ANDS together. 
+The constraints file simply reads right to left based on all of the ports provided from the top level file.
 
+### 3 - Was the selection of Minterm and Maxterm correct for each circuit? What would you have chosen?
 
-### Open the test.v file – how are we able to check that the signals match using XOR?
-
-Based on the test, we're able to check that signals match using XOR by verifying if the results return "true" when the inputs are different from each other.
+The selection of minterm and maxterm was correct for each circuit and we would've chosen minterms. 
